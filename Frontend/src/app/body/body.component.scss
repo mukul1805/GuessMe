@@ -1,0 +1,150 @@
+.content-container {
+    text-align: center;
+    justify-content: center;
+    margin: 1%;
+    font-family: cursive;
+}
+
+.current-word {
+    min-height: 75px;
+    text-align: center;
+}
+
+button {
+    margin: 1%;
+}
+
+.buttons-container  button{
+    margin: 1% 5% 1% 5%;
+    min-width: 100px;
+    font-size: larger;
+}
+
+.timer-button {
+    margin-bottom: 5%;
+}
+
+.taboo-container h4{
+    border-radius: 8px;
+    background-color: aquamarine;
+    margin-left:20%;
+    margin-right: 20%;
+}
+
+.current-word h1{
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+
+.countdown-timer {
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: #333;
+    
+}
+
+.timer-card {
+    margin-left: 5%;
+    text-align: center;
+    
+}
+
+.card {
+    min-height: 475px;
+    box-shadow: 2px 2px 10px;
+    // margin: 5%;
+    outline: none;
+    
+}
+
+.row {
+    font-family: cursive;
+}
+
+.score-title {
+    margin-top: 33%;
+}
+
+.score-card-main {
+    margin-right: 5%;
+}
+
+
+@media only screen and (max-width: 575px) {
+    .timer-card {
+      min-height: fit-content;
+      min-width: fit-content;
+      margin: 1%;
+    }
+
+    .card-title{
+        visibility: hidden;
+    }
+
+    .countdown-timer {
+        font-size: xxx-large;
+        font-weight: bold;
+        top: 15%;
+    }
+
+    .current-word h1{
+        font-size: larger;
+    }
+
+    .taboo-container{
+        margin: 0px;
+    }
+
+    .card {
+        min-height: fit-content;
+        margin: 1%;
+    }
+
+    button {
+        font-size: small;
+    }
+
+    .score-card {
+        // min-height: fit-content;
+        display: flex;
+        font-size: small;
+        margin-top: 0px;
+        margin: 1%;
+    }
+
+    .score-title {
+        margin-top: 0px;
+    }
+
+    .card-body {
+        padding: 0px;
+    }
+
+    .current-word{
+        min-height: min-content;
+    }
+
+    .buttons-container{
+        font-size: small;
+    }
+
+    .buttons-container button{
+        margin: 0.5%;
+    }
+
+    .score-card-main {
+        margin-right: 1%;
+        max-height: fit-content;
+    }
+
+    .score-disp{
+        display: flex;
+    }
+
+    .scoreB-css{
+        margin-left: 30px;
+    }
+  }

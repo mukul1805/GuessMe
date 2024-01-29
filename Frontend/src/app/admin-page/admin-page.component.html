@@ -1,0 +1,83 @@
+<h1 style="font-family: cursive; text-align: center;"> Admin Page</h1>
+
+<app-filter [Words]=Words (selectedFilterRadioButtonChanged)="onFilterChange($event)">
+</app-filter>
+
+
+<div *ngIf="selectedFilterRadioButton === 'Words'" style="font-family: cursive; margin-bottom: 30px;">
+    <div *ngIf="dataList && dataList.length > 0" class="mt-4">
+        <h2 style="text-align: center; font-family: cursive;">Words List</h2>
+        <div class="row">
+            <div class="col-md-3" *ngFor="let data of dataList">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title" [attr.title]="data.taboo_words" data-toggle="tooltip"
+                            data-placement="top">{{ data.word }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="selectedFilterRadioButton === 'delete'">
+    <h1 style="text-align: center; font-family: cursive;">Delete Words</h1>
+
+    <form #deleteForm="ngForm" (ngSubmit)="onDelete(formData.word)" class="mx-auto d-flex flex-column"
+        style="font-family: cursive;">
+        <div class="form-group">
+            <label for="deleteWord">Word to delete:</label>
+            <input type="text" class="form-control" [(ngModel)]="formData.word" required id="deleteWord"
+                placeholder="Enter Word to Delete">
+        </div>
+
+        <div class="button-container">
+            <button class="btn btn-danger ml-2" type="submit" [disabled]="deleteForm.invalid">Delete</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<div *ngIf="selectedFilterRadioButton === 'update'">
+    <h1 style="text-align: center; font-family: cursive;">Update or Add words!</h1>
+
+    <form #adminForm="ngForm" (ngSubmit)="onSubmit()" class="mx-auto d-flex flex-column" style="font-family: cursive;">
+        <div class="form-group">
+            <label for="word">Word:</label>
+            <input type="text" class="form-control" [(ngModel)]="formData.word" required id="word"
+                placeholder="Word input">
+        </div>
+        <div class="form-group">
+            <label for="subword1">Sub Word 1: </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.subWords[0]" required id="subword1"
+                placeholder="Enter SubWord...">
+            <br>
+            <label for="subword2">Sub Word 2: </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.subWords[1]" required id="subword2"
+                placeholder="Enter SubWord...">
+            <br>
+            <label for="subword3">Sub Word 3: </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.subWords[2]" required id="subword3"
+                placeholder="Enter SubWord...">
+            <br>
+            <label for="subword4">Sub Word 4: </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.subWords[3]" required id="subword4"
+                placeholder="Enter SubWord...">
+            <br>
+
+            <label for="subword5">Sub Word 5: </label>
+            <input type="text" class="form-control" [(ngModel)]="formData.subWords[4]" required id="subword5"
+                placeholder="Enter SubWord...">
+
+        </div>
+
+        <div class="button-container">
+            <button class="btn btn-dark ml-2" type="submit" [disabled]="adminForm.invalid">Submit</button>
+            <button class="btn btn-dark ml-2" type="button" (click)="clearForm()">Clear</button>
+        </div>
+    </form>
+
+</div>

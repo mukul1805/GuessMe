@@ -1,0 +1,228 @@
+<!-- -------------------------------------2nd Bootstrap----------------------------------------------------------------- -->
+
+<div class="row">
+
+    <!-- -----------timer--------- -->
+    <div class="col-sm-3 first-box">
+        <div class="card timer-card">
+
+            <div class="card-body">
+                <h5 class="card-title">Timer</h5>
+                <div class="countdown-container">
+                    <countdown class="countdown-timer" #countdowns [config]="{leftTime:30, demand:true, format: 'ss'}">
+                    </countdown>
+                </div>
+                <br>
+            </div>
+
+            <div class="timer-button">
+                <button class="btn btn-dark ml-2" [disabled]="firstClick" (click)="countdowns.resume()"
+                    (click)="getRandomPosition()" (click)="gameStarted() ">Team A</button>
+                <button style="margin-left: 3px;" class="btn btn-dark ml-2" [disabled]="secondClick"
+                    (click)="countdowns.restart()" (click)="countdowns.resume()" (click)="winner()">Team
+                    B</button>
+                <br>
+                <button class="btn btn-dark ml-2" type="button" value="New Game" (click)="newGame()"
+                    (click)="countdowns.restart()">
+                    New Game</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =--------WORD------------- -->
+
+    <div class="col-sm-6">
+        <div class="card text-center ">
+            <div class="current-word card-header bg-transparent border-success">
+                <h1>{{dataList[position].word}}</h1>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Taboo Words</h5>
+                <div class="card-text">
+                    <div class="taboo-container">
+                        <h4>{{dataList[position].taboo_words[0]}}</h4>
+                        <h4>{{dataList[position].taboo_words[1]}}</h4>
+                        <h4>{{dataList[position].taboo_words[2]}}</h4>
+                        <h4>{{dataList[position].taboo_words[3]}}</h4>
+                        <h4>{{dataList[position].taboo_words[4]}}</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer bg-transparent border-success">
+                <div class="buttons-container">
+                    <button class="btn btn-dark ml-2" (click)="correct()" [disabled]=!toggle> Correct </button>
+                    <button class="btn btn-dark ml-2" (click)="inCorrect()" [disabled]=!toggle> Incorrect </button>
+                    <button class="btn btn-dark ml-2" (click)="pass()" [disabled]=!toggle> Pass </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------- -->
+
+    <div class="col-sm-3">
+        <div class="card score-card-main" style=" text-align: center;">
+
+            <div class="score-card card-body">
+                <h5 class="card-title score-title">Score</h5>
+                <div class="card-text score-disp">
+                    <h3>Score A:</h3>
+                    <h4>{{scoreA}}</h4>
+                    <br>
+                    <h3 class="scoreB-css">Score B: </h3>
+                    <h4>{{scoreB}}</h4>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ------------------------------------External CSS------------------------------------------------- -->
+
+<!-- <div class="body-container">
+
+
+    <div class="timer-container">
+        <div class="countdown-container">
+            <countdown class="countdown-timer" #countdowns [config]="{leftTime:30, demand:true, format: 'ss'}">
+            </countdown>
+        </div>
+        <br>
+        <button class="btn btn-dark ml-2" [disabled]=!isDisabled (click)="countdowns.resume()" (click)="fetchData()"
+            (click)="gameStarted() ">Team A</button>
+        <button style="margin-left: 3px;" class="btn btn-dark ml-2" [disabled]=isDisabled (click)="countdowns.restart()" (click)="countdowns.resume()"
+            (click)="winner()">Team B</button>
+        <br>
+        <input class="btn btn-dark ml-2" type="button" value="New Game" onClick="window.location.reload();">
+    </div>
+
+    <div class="game-container">
+
+        <h1>{{dataList[position].word}}</h1>
+        <br>
+        <div class="taboo-container">
+            <h4>{{dataList[position].taboo_words[0]}}</h4>
+            <h4>{{dataList[position].taboo_words[1]}}</h4>
+            <h4>{{dataList[position].taboo_words[2]}}</h4>
+            <h4>{{dataList[position].taboo_words[3]}}</h4>
+            <h4>{{dataList[position].taboo_words[4]}}</h4>
+        </div>
+
+        <div class="buttons-container">
+            <button class="btn btn-dark ml-2" (click)="correct()" [disabled]=!toggle> Correct </button>
+            <button class="btn btn-dark ml-2" (click)="inCorrect()" [disabled]=!toggle> Incorrect </button>
+            <button class="btn btn-dark ml-2" (click)="pass()" [disabled]=!toggle> Pass </button>
+        </div>
+    </div>
+
+    <div class="score-container">
+        <div class="current-score" >
+            <h3>Score A:</h3>
+            <h4>{{scoreA}}</h4>
+            <br>
+            <h3>Score B: </h3>
+            <h4>{{scoreB}}</h4>
+        </div>
+    </div>
+</div>  -->
+
+
+
+
+<!-- -------------------------------------1st bootstrap------------------------------------------------- -->
+
+<!-- <div class=" content-container card border-success mb-8 " style="border: none; box-shadow: 2px 2px 10px;">
+
+
+    <div class="current-word card-header bg-transparent border-success">
+        <h1>{{dataList[position].word}}</h1>
+    </div> -->
+
+<!-- add all 3 component -->
+
+<!-- 1st -->
+<!-- <div class="row" style="text-align: center;">
+        <div class="col-sm-4 mb-3 mb-sm-0">
+            <div class="card" style="min-height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-title">Timer</h5>
+                    <div class="countdown-container">
+                        <countdown class="countdown-timer" #countdowns
+                            [config]="{leftTime:30, demand:true, format: 'ss'}">
+                        </countdown>
+                    </div>
+                    <br>
+
+                </div>
+                <div style="margin-bottom: 5%;">
+                    <button class="btn btn-dark ml-2" [disabled]="firstClick" (click)="countdowns.resume()"
+                        (click)="getRandomPosition()" (click)="gameStarted() ">Team A</button>
+                    <button style="margin-left: 3px;" class="btn btn-dark ml-2" [disabled]="secondClick"
+                        (click)="countdowns.restart()" (click)="countdowns.resume()" (click)="winner()">Team
+                        B</button>
+                    <br>
+                    <button class="btn btn-dark ml-2" type="button" value="New Game"
+                        onClick="window.location.reload();"> New Game</button>
+                </div>
+            </div>
+        </div> -->
+
+<!-- 2nd -->
+
+<!-- <div class="col-sm-4">
+            <div class="card" style="min-height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-title">Taboo Words</h5>
+                    <div class="card-text">
+                        <div class="taboo-container">
+                            <h4>{{dataList[position].taboo_words[0]}}</h4>
+                            <h4>{{dataList[position].taboo_words[1]}}</h4>
+                            <h4>{{dataList[position].taboo_words[2]}}</h4>
+                            <h4>{{dataList[position].taboo_words[3]}}</h4>
+                            <h4>{{dataList[position].taboo_words[4]}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+<!-- 3rd -->
+
+<!-- <div class="col-sm-4">
+            <div class="card" style="min-height: 300px;">
+                <div class="score-card card-body">
+                    <h5 class="card-title">Score</h5>
+                    <div class="card-text">
+                        <h3>Score A:</h3>
+                        <h4>{{scoreA}}</h4>
+                        <br>
+                        <h3>Score B: </h3>
+                        <h4>{{scoreB}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+
+
+
+<!-- ------------------------ -->
+
+<!-- <div class="card-footer bg-transparent border-success">
+        <div class="buttons-container">
+            <button class="btn btn-dark ml-2" (click)="correct()" [disabled]=!toggle> Correct </button>
+            <button class="btn btn-dark ml-2" (click)="inCorrect()" [disabled]=!toggle> Incorrect </button>
+            <button class="btn btn-dark ml-2" (click)="pass()" [disabled]=!toggle> Pass </button>
+        </div>
+    </div>
+
+</div> -->
